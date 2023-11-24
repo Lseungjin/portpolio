@@ -64,11 +64,11 @@ const Contact = () => {
           <form className="contact_mail" onSubmit={sendEmail} ref={form}>
             <div className="mail_top">
               <div className="contact_box">
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input id="name" className="mail_input" name="user_name" />
               </div>
               <div className="contact_box">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input id="email" className="mail_input" name="user_email" />
               </div>
             </div>

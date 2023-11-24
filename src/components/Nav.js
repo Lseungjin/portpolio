@@ -10,7 +10,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
 
@@ -43,10 +43,11 @@ const Nav = () => {
   };
 
   // 로컬스토리지 다크모드 확인
-  if (selectedTheme === "dark") {
-    setDarkMode();
-  } else {
-  }
+  useEffect(() => {
+    if (selectedTheme === "dark") {
+      setDarkMode();
+    }
+  }, [selectedTheme]);
 
   // 모드 변환
   const toogleTheme = (e) => {
@@ -105,9 +106,9 @@ const Nav = () => {
                 defaultChecked={selectedTheme === "dark"}
               />
               <label
-                for="darkmode-toggle"
+                htmlFor="darkmode-toggle"
                 data-checked="dark"
-                data-unChecked="light"
+                data-unchecked="light"
               ></label>
             </div>
           </div>
